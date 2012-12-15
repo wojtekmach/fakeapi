@@ -1,6 +1,4 @@
-# Fakeapi
-
-TODO: Write a gem description
+# FakeAPI
 
 ## Installation
 
