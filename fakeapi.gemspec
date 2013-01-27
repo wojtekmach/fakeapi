@@ -14,4 +14,15 @@ Gem::Specification.new do |gem|
   gem.name          = 'fakeapi'
   gem.require_paths = ['lib']
   gem.version       = FakeAPI::VERSION
+
+  gem.add_dependency 'vcr'
+  gem.add_dependency 'webmock'
+  gem.add_dependency 'artifice'
+  gem.add_dependency 'term-ansicolor'
+  gem.add_dependency 'sinatra'
+
+  gem.add_development_dependency 'rake'
+  gem.add_development_dependency 'rspec'
+  gem.add_development_dependency 'dotenv'
+  gem.add_development_dependency 'bitly'
 end

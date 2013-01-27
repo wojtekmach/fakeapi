@@ -1,0 +1,36 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.bit.ly/v3/shorten?apiKey=R_09c2f2080b43230744cbac384b7ce0ca&login=wojtekmach&longUrl=http://google.com
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sun, 27 Jan 2013 09:17:20 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Connection:
+      - keep-alive
+      Mime-Version:
+      - '1.0'
+      Content-Length:
+      - '182'
+    body:
+      encoding: US-ASCII
+      string: ! '{ "status_code": 200, "status_txt": "OK", "data": { "long_url": "http:\/\/google.com\/",
+        "url": "http:\/\/bit.ly\/ORN1fW", "hash": "ORN1fW", "global_hash": "LmvF",
+        "new_hash": 0 } }
+
+'
+    http_version: 
+  recorded_at: Sun, 27 Jan 2013 09:17:20 GMT
+recorded_with: VCR 2.4.0

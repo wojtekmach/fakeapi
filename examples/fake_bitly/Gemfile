@@ -1,0 +1,12 @@
+source :rubygems
+
+gem 'rake'
+gem 'dotenv'
+gem 'webmock', github: 'bblimke/webmock'
+gem 'bitly'
+gem 'rack-test'
+gem 'vcr'
+gem 'sinatra'
+gem 'artifice'
+gem 'rspec'
+gem 'term-ansicolor'

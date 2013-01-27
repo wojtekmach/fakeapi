@@ -1,0 +1,5 @@
+task :test do
+  system 'rspec spec'
+end
+
+task :default => :test
