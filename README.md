@@ -22,20 +22,22 @@ Or install it yourself as:
 
 Let's say you're building FakeBitly service.
 
-0. (Optional) Due to incompatibility between webmock and artifice you
-   have to use newer versions of webmock:
+### Step 0: (Optional) Install newer webmock
+
+Due to incompatibility between webmock and artifice you have to use
+newer version of webmock:
 
 ```ruby
 # Gemfile
 source :rubygems
 
-gem 'fakeapi', path: '~/Code/vendor/fakeapi'
+gem 'fakeapi'
 gem 'webmock', github: 'bblimke/webmock', ref: '2c596f'
 gem 'rspec'
 gem 'bitly'
 ```
 
-1. Create fake service:
+### Step 1: Create fake service
 
 ```ruby
 # fake_bitly.rb
@@ -45,10 +47,12 @@ class FakeBitly < FakeAPI::App
 end
 ```
 
-2. Create a spec. You don't want to test FakeBitly endpoints directly.
-   Instead use a client library. `FakeBitly.test` (inherited from
-   `FakeAPI::App`) will try to use your fake service (using `Artifice`)
-   and if that fails it will record the HTTP interaction (using `VCR`).
+### Step 2: Create spec
+
+You don't want to test FakeBitly endpoints directly.
+Instead use a client library. `FakeBitly.test` (inherited from
+`FakeAPI::App`) will try to use your fake service (using `Artifice`)
+and if that fails it will record the HTTP interaction (using `VCR`).
 
 ```ruby
 # fake_bitly_spec.rb
@@ -68,7 +72,7 @@ describe FakeBitly do
 end
 ```
 
-3. Run the spec:
+### Step 3: Run spec
 
 ```bash
 % bundle exec rspec fake_bitly_spec.rb
@@ -92,10 +96,12 @@ Failures:
        NotImplementedError
 ```
 
-4. Use generated code:
+### Step 4: Use generated code:
 
 ```ruby
 # fake_bitly.rb
+require 'fakeapi'
+
 class FakeBitly < FakeAPI::App
   get '/v3/shorten' do
     status 200
@@ -105,7 +111,7 @@ class FakeBitly < FakeAPI::App
 end
 ```
 
-5. Run specs:
+### Step 5: Run spec
 
 ```bash
 % bundle exec rspec fake_bitly_spec.rb
