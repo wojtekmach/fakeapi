@@ -1,3 +1,3 @@
 module FakeAPI
-  VERSION = '0.0.3'
+  VERSION = File.read(File.expand_path('../../../VERSION', __FILE__)).strip
 end
